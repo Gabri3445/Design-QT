@@ -461,7 +461,7 @@ class Ui_Installer(object):
         self.thread = QThread()
         self.worker = Worker()
         self.worker.moveToThread(self.thread)
-        self.thread.start()
+        self.toolButton.clicked.connect(self.worker.download)
         self.toolButton_2 = QtWidgets.QToolButton(self.centralwidget)
         self.toolButton_2.clicked.connect(self.author)
         self.toolButton_2.setGeometry(QtCore.QRect(520, 450, 121, 31))
