@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import qdarkstyle
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
-from PyQt5.QtCore import QObject, Qthread
+from PyQt5.QtCore import QObject, QThread
 import webbrowser
 import requests
 import os.path
@@ -458,7 +458,7 @@ class Ui_Installer(object):
         self.toolButton = QtWidgets.QToolButton(self.centralwidget)
         self.toolButton.setGeometry(QtCore.QRect(650, 450, 121, 31))
         self.toolButton.setObjectName("toolButton")
-        self.thread = Qthread()
+        self.thread = QThread()
         self.worker = Worker()
         self.worker.moveToThread(self.thread)
         self.thread.start()
